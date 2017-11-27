@@ -1,6 +1,14 @@
 <html>
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<body style='
+		    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-size: 14px;
+			line-height: 1.42857143;
+			color: #333;
+			background-color: rgba(226, 226, 226, 0);
+
+		'>
 <?PHP
 	session_start();
 	$_SESSION["rota"] = $_REQUEST["rota"];
@@ -11,21 +19,22 @@
 		$inforota = 'Esta rota possui <b>péssima</b> iluminação, <b>pouco</b> movimento de pedestres e carros e <b>alto</b> índice de criminalidade.';
 	}
 	echo '
-		<body>
-			<center>
-				<div id="header"></div>
-				<form method="post" action="questionario.php">
-					<fieldset>
-						<legend> Passo 5 - Informações </legend>
-						A rota escolhida foi: <b>' . $_SESSION["rota"] .'</b> <br/> '
-						. $inforota .' <br/><br/>
-						
-						<input type="submit" value="Próximo" />
-						<br/><br/><center><a href="form_alterar.php">Alterar cadastro</a></center>
-					</fieldset>	
-				</form>
-				<div id="footer"></div>
-			</center>
+				<center>
+					<div id="header"></div>
+					<form method="post" action="questionario.php">
+						<fieldset>
+							<legend> Passo 5 - Informações 
+								<br/><a style="font-size: 12px" href="form_alterar.php">Alterar cadastro</a>
+								<a style="color: red; font-size: 12px" href="../index.php" onclick="return confirm(\'Você realmente deseja efetuar o logout?\')">Logout</a>
+							</legend>
+							A rota escolhida foi: <b>' . $_SESSION["rota"] .'</b> <br/> '
+							. $inforota .' <br/><br/>
+							
+							<input type="submit" value="Próximo" />
+						</fieldset>	
+					</form>
+					<div id="footer"></div>
+				</center>
 		</body>
 		
 		<script src="js/jquery.min.js"></script> 

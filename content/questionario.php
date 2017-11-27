@@ -1,6 +1,14 @@
 <html>
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<body style='
+		    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-size: 14px;
+			line-height: 1.42857143;
+			color: #333;
+			background-color: rgba(226, 226, 226, 0);
+
+		'>
 <?PHP
 	session_start();
 	$pergunta = '';
@@ -8,13 +16,15 @@
 	$resposta2 = '';
 	$respostaCorreta = '';	
 	echo '
-		<body>
-			<center>
-				<div id="header"></div>
-				<form method="post" action="resultado.php">
-					<fieldset>
-						<legend> Passo 6 - Questionário </legend>
-						O tipo de transporte escolhido foi: <b>' . $_SESSION["tipo_transporte"] .'</b> <br/> ';
+				<center>
+					<div id="header"></div>
+					<form method="post" action="resultado.php">
+						<fieldset>
+							<legend> Passo 6 - Questionário 
+								<br/><a style="font-size: 12px" href="form_alterar.php">Alterar cadastro</a>
+								<a style="color: red; font-size: 12px" href="../index.php" onclick="return confirm(\'Você realmente deseja efetuar o logout?\')">Logout</a>
+							</legend>
+							O tipo de transporte escolhido foi: <b>' . $_SESSION["tipo_transporte"] .'</b> <br/> ';
 	
 	if ($_SESSION["tipo_transporte"] == 'Carro') {
 		echo '
@@ -58,12 +68,11 @@
 		';
 	}
 	
-	echo 	'<input type="submit" value="Próximo" />
-	<br/><br/><center><a href="form_alterar.php">Alterar cadastro</a></center>
-					</fieldset>	
-				</form>
-				<div id="footer"></div>
-			</center>
+	echo 			'<input type="submit" value="Próximo" />
+						</fieldset>	
+					</form>
+					<div id="footer"></div>
+				</center>
 		</body>
 		
 		<script src="js/jquery.min.js"></script> 

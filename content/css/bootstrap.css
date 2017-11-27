@@ -4,6 +4,81 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+/* Customizações SART */
+
+div.botaoEntrar input {
+    background-color: #006f2c;
+    cursor: pointer;
+    width: 85px;
+    height: 30px;
+    border: none;
+	color: white;
+	border-radius: 12px;
+}
+
+input[type="text"], input[type="password"], input[type="number"] {
+    margin: 0;
+    height: 36px;
+    border-width: 0;
+    border-radius: 2px;
+    font-size: 14px;
+    background-color: #09ff0536;
+    color: #6a737c;
+	text-align: -webkit-center;
+}
+
+div.inputLogin input {
+    margin: 0;
+    height: 36px;
+    border-width: 0;
+    border-radius: 2px;
+    font-size: 14px;
+    background-color: #09ff0536;
+    color: #6a737c;
+}
+
+div.inputLogin label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+}
+
+.login {
+    background-color: #4bff0052;
+    width: 27%;
+    height: 250px;
+}
+
+.cadastro {
+    background-color: #4bff0052;
+    width: 27%;
+    height: 480px;
+}
+
+div.deletar input {
+    background-color: #770000;
+    cursor: pointer;
+    width: 139px;
+    height: 30px;
+    border: none;
+	color: white;
+	border-radius: 12px;
+}
+
+html, body{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: rgba(226, 226, 226, 0.38);
+}
+
+.bg {
+    background-color: rgba(226, 226, 226, 0.38);
+}
+
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -128,8 +203,13 @@ button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  -webkit-appearance: button;
-  cursor: pointer;
+    background-color: #006f2c;
+    cursor: pointer;
+    width: 85px;
+    height: 30px;
+    border: none;
+	color: white;
+	border-radius: 12px;
 }
 button[disabled],
 html input[disabled] {

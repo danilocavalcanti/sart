@@ -2,7 +2,14 @@
 <html>
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-	<body>
+		<body style='
+		    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-size: 14px;
+			line-height: 1.42857143;
+			color: #333;
+			background-color: rgba(226, 226, 226, 0);
+
+		'>	
 <?php
 	session_start();
 	include_once "configuracao/conectabd.inc.php";

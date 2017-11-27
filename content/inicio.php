@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<html>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<body style='
+		    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-size: 14px;
+			line-height: 1.42857143;
+			color: #333;
+			background-color: rgba(226, 226, 226, 0);
+
+		'>
 <?php
 	  include_once "configuracao/conectabd.inc.php";
 	  
@@ -44,17 +55,19 @@
 	  }
 	  
 	if ($senha != $senha2) {
-		header("Location: cadastro.php?senha=true");;
+		$cadastro = false;
+		header("Location: cadastro.php?senha=true");
 	}
 
 	$checarExistencia = "SELECT 1 FROM transeunte WHERE email = '$email'";
 	$resultadoChecagem = mysqli_query($link, $checarExistencia);
 	
 	if (mysqli_num_rows($resultadoChecagem) > 0) {
-		header("Location: cadastro.php?existente=true");;
+		$cadastro = false;
+		header("Location: cadastro.php?existente=true");
 	}	  
 	if ($alteracao != "true" && $cadastro == "true") {	   
-		$insertTranseunte = "INSERT INTO transeunte (email, nome, idade, senha) VALUES ('$email', '$nome', $idade, sha1($senha));";
+		$insertTranseunte = "INSERT INTO transeunte (email, nome, idade, senha) VALUES ('$email', '$nome', $idade, sha1('$senha'));";
 		$resultadoInsertTranseunte = mysqli_query($link, $insertTranseunte);
 		
 		$_SESSION["nome"] = $nome;
@@ -63,6 +76,7 @@
 		$_SESSION["id_transeunte"] = $id_transeunte;
 		
 		mysqli_close($link);	
+		echo '<center><h4 style="color: #01d801;">Cadastro efetuado com sucesso!</h4></center>';
 	} else {
 		$nome = $_SESSION["nome"];
 		$idade = $_SESSION["idade"];
@@ -71,25 +85,22 @@
 		$alteracao = "";
 	}
 ?>
-<html>
-	<meta charset="utf-8"/>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-	<body>
-		<center>
-			<div id="header"></div>
-			<form method="post" action="destino.php">
-				<fieldset>
-					<legend> Passo 1 - Partida </legend>
-					<label for="local_partida">Insira seu local de partida</label><br/>
-					<input type="text" id="local_partida" name="local_partida" required="true" placeholder="Ex.: Senac 903 Sul"/><br/><br/>
-					<input type="submit" value="Próximo" />
-					<?php
-						echo '<br/><br/><center><a href="form_alterar.php">Alterar cadastro</a></center> ';
-					?>
-				</fieldset>	
-			</form>
-			<div id="footer"></div>
-		</center>
+			<center>
+				<div id="header"></div>
+				<form method="post" action="destino.php">
+					<fieldset>
+						<legend> Passo 1 - Partida <br/>
+						<a style="font-size: 12px" href="form_alterar.php">Alterar cadastro</a>
+						<a style="color: red; font-size: 12px" href="../index.php" onclick="return confirm('Você realmente deseja efetuar o logout?')">Logout</a>
+						</legend>
+						
+						<label for="local_partida">Insira seu local de partida</label><br/>
+						<input type="text" id="local_partida" name="local_partida" required="true" placeholder="Ex.: Senac 903 Sul"/><br/><br/>
+						<input type="submit" value="Próximo" />
+					</fieldset>	
+				</form>
+				<div id="footer"></div>
+			</center>
 	</body>
 
 	<script src="js/jquery.min.js" ></script>

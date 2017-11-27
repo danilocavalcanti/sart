@@ -25,7 +25,7 @@
 		  $senha = $_POST["senha"];
 	  }
 	  
-	  $efetuarLogin = "SELECT nome, idade, email, id_transeunte FROM transeunte WHERE email = '$email' AND senha = sha1($senha)";
+	  $efetuarLogin = "SELECT nome, idade, email, id_transeunte FROM transeunte WHERE email = '$email' AND senha = sha1('$senha')";
 	  $result = mysqli_query($link, $efetuarLogin);
 	  if (mysqli_num_rows($result) > 0) {
 		while ($row = mysqli_fetch_assoc($result)) {	
