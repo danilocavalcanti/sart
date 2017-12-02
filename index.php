@@ -32,16 +32,10 @@
 						</div>
 					</fieldset>	
 				</form>
-				<div id="footer"></div>
+				<div id="footer">
+				   <br/> Sistema de Avaliação de Riscos do Transeunte	
+				</div>
 			</center>
 		</div>
 	</body>
-
-	<script src="content/js/jquery.min.js" ></script>
-	<script>	
-		$(function(){
-		  $("#footer").load("content/templates/footer.html"); 
-		});
-	</script>	
-	</script> 
 </html>

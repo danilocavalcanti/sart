@@ -1,5 +1,7 @@
 Projeto S.A.R.T (Sistema de Avaliação de Riscos do Transeunte)
 
+-- Integrantes --
+
 Desenvolvimento:
 -Danilo Tourinho Cavalcanti
 
@@ -9,6 +11,7 @@ Documentação e requisitos:
 -Paulo Petrillo
 -Thyago Souza
 
+-- Tecnologias --
 Este projeto web PHP é um protótipo do sistema.
 O método de cálculo e a disposição das informações não se dão por forma dinâmica por se tratar de um protótipo.
 Realiza conexão com banco de dados MySQL.
@@ -20,6 +23,8 @@ Foi utilizado:
 - MySQL
 - Apache
 - PHPMyAdmin
+
+-- Informações úteis --
 
 Necessário um servidor/container para execução da aplicação. Para desenvolvimento, foi utilizado o XAMPP (Apache) (https://www.apachefriends.org/pt_br/index.html).
 
